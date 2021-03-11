@@ -1,34 +1,43 @@
-import java.util.Random;
+
 
 public class Person {
 
+
     private int age;
     private String name;
-    Random random=new Random();
+    private Sex sex;
 
-    public int getAge() {
-        return age;
+
+
+    public Person(String name, int age, Sex sex) {
+    }
+
+    public Person() {
+    }
+
+
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
+
+    public int getAge(int age) {
+        return this.age;
     }
 
     public void setAge(int age) {
-        int min=0;
-        int max=100;
-        age=random.nextInt(min-max);
-        this.age = age;
+        this.age = this.age;
     }
 
-    public String getName() {
+    public String getName(String name) {
         return name;
     }
 
     public void setName(String name) {
-        Sex sexM=Sex.MAN;
-        Sex sexW=Sex.WOMAN;
         this.name = name;
-    }
-
-    public static void main(String[] args) {
 
     }
-
 }

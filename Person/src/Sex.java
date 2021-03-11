@@ -1,17 +1,12 @@
 public enum Sex {
 
-    MAN(ageEnum,nameEnum),WOMAN;
+    MAN, WOMAN;
 
-    static int ageEnum;
-    static String nameEnum;
 
-    Sex(int ageEnum) {
-        this.ageEnum = ageEnum;
+    public static Sex MAN(String[] nameMan) {
+        return MAN;
     }
-
-    Sex(String nameEnum) {
-        this.nameEnum = nameEnum;
+    public static Sex WOMAN(String[] nameWoman){
+        return WOMAN;
     }
-
-
 }
