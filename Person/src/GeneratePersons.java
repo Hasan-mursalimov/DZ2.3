@@ -18,10 +18,10 @@ public class GeneratePersons extends Person {
 
 
     public List<Person> generatePersons(String name, int age, Sex sex) {
-        List<Person> person = new ArrayList<>();
+        List<Person> personList = new ArrayList<>();
 
 
-            for (int a = 0; a < person.size(); a++) {
+            for (int a = 0; a < personList.size(); a++) {
 
 
 
@@ -30,13 +30,15 @@ public class GeneratePersons extends Person {
                 switch (sex){
                     case MAN:
                         int w = (int) Math.floor(Math.random() * nameMan.length);
-//                        person.setName(nameMan[w]);
+                        name=nameMan[w];
+                        break;
                     case WOMAN:
                         int m = (int) Math.floor(Math.random() * nameMan.length);
-//                        person.setName(nameWoman[m]);
+                        name=nameWoman[m];
+                        break;
                 }
-                Person person1 = new Person(name, age, sex);
-                person.add(person1);
+                Person person = new Person(name, age, sex);
+                personList.add(person);
             }
 
 
