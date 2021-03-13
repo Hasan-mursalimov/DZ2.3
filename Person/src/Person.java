@@ -3,16 +3,15 @@
 public class Person {
 
 
-    private int age;
-    private String name;
+    static int age;
+    static String name;
     private Sex sex;
-
 
 
     public Person(String name, int age, Sex sex) {
     }
 
-    public Person() {
+    public Person(String name, int age) {
     }
 
 
@@ -24,7 +23,7 @@ public class Person {
         this.sex = sex;
     }
 
-    public int getAge(int age) {
+    public int getAge() {
         return this.age;
     }
 
@@ -32,7 +31,7 @@ public class Person {
         this.age = this.age;
     }
 
-    public String getName(String name) {
+    public String getName() {
         return name;
     }
 
@@ -40,4 +39,27 @@ public class Person {
         this.name = name;
 
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                ", sex=" + sex +
+                '}';
+    }
+
+    public int compareTo(Person person) {
+        int result = 0;
+        if (this.getSex() != person.getSex()) {
+            result = this.getSex() == Sex.MAN ? -1 : 1;
+            return result;
+        }
+        if (this.getAge() - person.getAge() != 0) {
+            return this.getAge() - person.getAge() > 0 ? -1 : 1;
+        }
+        result = this.getName().compareTo(person.getName());
+        return result;
+    }
+
 }
