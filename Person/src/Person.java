@@ -1,19 +1,18 @@
-
+import java.util.List;
 
 public class Person {
 
 
-    static int age;
-    static String name;
+    private int age;
+    private String name;
     private Sex sex;
 
 
     public Person(String name, int age, Sex sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
     }
-
-    public Person(String name, int age) {
-    }
-
 
     public Sex getSex() {
         return sex;
@@ -37,7 +36,6 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
-
     }
 
     @Override
